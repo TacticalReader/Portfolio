@@ -1,0 +1,126 @@
+/* =====================================================
+   Experience.css — All styles required by Experience.jsx
+   ===================================================== */
+
+/* --- Layout --- */
+.relative       { position: relative; }
+.flex           { display: flex; }
+.flex-col       { flex-direction: column; }
+.flex-wrap      { flex-wrap: wrap; }
+.items-center   { align-items: center; }
+.justify-center   { justify-content: center; }
+.justify-between  { justify-content: space-between; }
+.gap-1  { gap: 0.25rem; }
+.gap-2  { gap: 0.5rem; }
+.gap-3  { gap: 0.75rem; }
+.w-full { width: 100%; }
+.mt-1   { margin-top: 0.25rem; }
+.mt-1\.5 { margin-top: 0.375rem; }
+.mt-4   { margin-top: 1rem; }
+.mt-5   { margin-top: 1.25rem; }
+.mt-20  { margin-top: 5rem; }
+.ml-2   { margin-left: 0.5rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+
+/* --- Sizing --- */
+.w-\[60\%\] { width: 60%; }
+.h-\[60\%\] { height: 60%; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+/* --- Typography --- */
+.text-white     { color: #ffffff; }
+.text-secondary { color: #aaa6c3; }
+.text-white-100 { color: #f3f3f3; }
+.text-center    { text-align: center; }
+.uppercase      { text-transform: uppercase; }
+.tracking-wide  { letter-spacing: 0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.tracking-widest { letter-spacing: 0.1em; }
+/* sectionSubText */
+.text-\[14px\]  { font-size: 14px; }
+/* sectionHeadText */
+.text-\[30px\]  { font-size: 30px; }
+.font-black     { font-weight: 900; }
+.font-bold      { font-weight: 700; }
+.font-medium    { font-weight: 500; }
+.font-normal    { font-weight: 400; }
+.text-\[24px\]  { font-size: 24px; }
+.text-\[16px\]  { font-size: 16px; }
+.text-\[11px\]  { font-size: 11px; }
+.text-\[10px\]  { font-size: 10px; }
+.text-\[9px\]   { font-size: 9px; }
+.text-\[12px\]  { font-size: 12px; }
+.leading-relaxed { line-height: 1.625; }
+.inline-block    { display: inline-block; }
+.list-none       { list-style: none; padding: 0; margin: 0; }
+
+/* --- Colors & BG --- */
+.bg-\[\#915eff\]     { background-color: #915eff; }
+.bg-\[\#915eff1a\]   { background-color: rgba(145,94,255,0.1); }
+.text-\[\#915eff\]   { color: #915eff; }
+.border-\[\#915eff33\] { border-color: rgba(145,94,255,0.2); }
+.text-\[\#aaa6c3\]   { color: #aaa6c3; }
+
+/* --- Border --- */
+.border           { border-width: 1px; border-style: solid; }
+.border-2         { border-width: 2px; border-style: solid; }
+.rounded-full     { border-radius: 9999px; }
+.px-2  { padding-left: 0.5rem; padding-right: 0.5rem; }
+.py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+.py-1  { padding-top: 0.25rem;  padding-bottom: 0.25rem; }
+
+/* --- Animations --- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+/* --- Responsive sm: (640px) --- */
+@media (min-width: 640px) {
+  .sm\:px-16         { padding-left: 4rem;  padding-right: 4rem; }
+  .sm\:py-16         { padding-top: 4rem;   padding-bottom: 4rem; }
+  .sm\:text-\[18px\] { font-size: 18px; }
+  .sm\:text-\[50px\] { font-size: 50px; }
+}
+
+/* --- Responsive md: (768px) --- */
+@media (min-width: 768px) {
+  .md\:text-\[60px\] { font-size: 60px; }
+}
+
+/* --- Responsive xs: (450px) --- */
+@media (min-width: 450px) {
+  .xs\:text-\[40px\] { font-size: 40px; }
+}
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+   ===================================================== */
+@media (max-width: 767px) {
+  /* Timeline title text */
+  .text-\[24px\] { font-size: 18px; }
+  .text-\[16px\] { font-size: 14px; }
+  .text-\[14px\] { font-size: 12px; }
+  .text-\[11px\] { font-size: 10px; }
+
+  /* Date label text */
+  .text-\[12px\] { font-size: 11px; }
+
+  /* Skill badges */
+  .text-\[11px\] { font-size: 10px; }
+  .gap-2 { gap: 0.375rem; }
+
+  /* Reduce top margin of experience timeline */
+  .mt-20 { margin-top: 2.5rem; }
+
+  /* Section heading alignment */
+  .gap-3 { gap: 0.5rem; }
+}
+
+@media (max-width: 460px) {
+  .text-\[24px\] { font-size: 16px; }
+  .text-\[16px\] { font-size: 13px; }
+  .text-\[14px\] { font-size: 11px; }
+  .mt-20 { margin-top: 2rem; }
+}

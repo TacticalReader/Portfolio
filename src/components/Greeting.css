@@ -1,0 +1,85 @@
+/* =====================================================
+   Greeting.css — All styles required by Greeting.jsx
+   ===================================================== */
+
+.fixed    { position: fixed; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0  { inset: 0; }
+.top-\[200px\] { top: 200px; }
+.right-8  { right: 2rem; }
+.z-10     { z-index: 10; }
+
+.hidden        { display: none; }
+.flex          { display: flex; }
+.flex-col      { flex-direction: column; }
+.items-center  { align-items: center; }
+.gap-4         { gap: 1rem; }
+.overflow-hidden { overflow: hidden; }
+
+.p-\[2px\] { padding: 2px; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-\[14px\] { border-radius: 14px; }
+.px-6  { padding-left: 1.5rem; padding-right: 1.5rem; }
+.py-4  { padding-top: 1rem; padding-bottom: 1rem; }
+.text-3xl     { font-size: 1.875rem; }
+.text-xs      { font-size: 0.75rem; }
+.text-\[18px\] { font-size: 18px; }
+.font-medium  { font-weight: 500; }
+.font-bold    { font-weight: 700; }
+.uppercase    { text-transform: uppercase; }
+.tracking-wider { letter-spacing: 0.05em; }
+.opacity-80   { opacity: 0.8; }
+.text-white   { color: #ffffff; }
+.text-secondary { color: #aaa6c3; }
+
+.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+.from-\[\#915eff\] { --tw-gradient-from: #915eff; }
+.to-\[\#804dee\]   { --tw-gradient-to: #804dee; }
+.shadow-2xl    { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+.border        { border-width: 1px; border-style: solid; }
+.border-white\/10 { border-color: rgba(255,255,255,0.1); }
+.transition-all { transition: all 300ms cubic-bezier(0.4,0,0.2,1); }
+.duration-300   { transition-duration: 300ms; }
+.duration-1000  { transition-duration: 1000ms; }
+.blur  { filter: blur(8px); }
+.opacity-20  { opacity: 0.2; }
+.opacity-40  { opacity: 0.4; }
+.group:hover .group-hover\:opacity-40 { opacity: 0.4; }
+.group:hover .group-hover\:bg-\[\#050816\]\/70 { background-color: rgba(5,8,22,0.7); }
+
+/* bounce-slow animation */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+
+/* The bg overlay */
+.-inset-1 { inset: -0.25rem; }
+
+@media (min-width: 640px) {
+  .sm\:block { display: block; }
+}
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+   ===================================================== */
+@media (max-width: 767px) {
+  /* Move greeting badge closer to left edge and reduce top position */
+  .top-\[200px\] { top: 130px; }
+  .right-8 { right: 0.75rem; }
+
+  /* Shrink greeting badge padding */
+  .px-6 { padding-left: 0.875rem; padding-right: 0.875rem; }
+  .py-4 { padding-top: 0.6rem;  padding-bottom: 0.6rem; }
+
+  /* Smaller text in badge */
+  .text-\[18px\] { font-size: 14px; }
+  .text-3xl { font-size: 1.25rem; }
+}
+
+@media (max-width: 460px) {
+  /* Hide greeting badge on very small phones to avoid clutter */
+  .fixed.top-\[200px\] { display: none !important; }
+}

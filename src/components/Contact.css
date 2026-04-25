@@ -1,0 +1,126 @@
+/* =====================================================
+   Contact.css — All styles required by Contact.jsx
+   ===================================================== */
+
+/* --- Layout --- */
+.flex          { display: flex; }
+.flex-col      { flex-direction: column; }
+.flex-col-reverse { flex-direction: column-reverse; }
+.items-center  { align-items: center; }
+.items-start   { align-items: flex-start; }
+.gap-2  { gap: 0.5rem; }
+.gap-8  { gap: 2rem; }
+.gap-10 { gap: 2.5rem; }
+.overflow-hidden { overflow: hidden; }
+
+/* --- Position --- */
+.relative { position: relative; }
+
+/* --- Sizing --- */
+.flex-\[0\.75\]    { flex: 0.75; }
+.w-fit             { width: fit-content; }
+
+/* --- Spacing --- */
+.p-8    { padding: 2rem; }
+.py-4   { padding-top: 1rem; padding-bottom: 1rem; }
+.px-6   { padding-left: 1.5rem; padding-right: 1.5rem; }
+.py-3   { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.px-8   { padding-left: 2rem; padding-right: 2rem; }
+.mt-12  { margin-top: 3rem; }
+.mb-4   { margin-bottom: 1rem; }
+
+/* --- sectionSubText --- */
+.text-\[14px\] { font-size: 14px; }
+.uppercase     { text-transform: uppercase; }
+.tracking-wider { letter-spacing: 0.05em; }
+
+/* --- sectionHeadText --- */
+.text-\[30px\]  { font-size: 30px; }
+.font-black     { font-weight: 900; }
+
+/* --- Typography --- */
+.text-white     { color: #ffffff; }
+.text-secondary { color: #aaa6c3; }
+.text-\[18px\]  { font-size: 18px; }
+.font-medium { font-weight: 500; }
+.font-bold   { font-weight: 700; }
+.inline-block { display: inline-block; }
+
+/* --- Colors --- */
+.bg-black-100  { background-color: #100d25; }
+.bg-tertiary   { background-color: #151030; }
+.shadow-md.shadow-primary,
+.shadow-primary { box-shadow: 0 4px 6px -1px rgba(5,8,22,0.7), 0 2px 4px -2px rgba(5,8,22,0.7); }
+.shadow-md  { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+
+/* --- Form inputs --- */
+.placeholder\:text-secondary::placeholder { color: #aaa6c3; }
+.outline-none  { outline: none; }
+.border-none   { border: none; }
+.rounded-lg    { border-radius: 0.5rem; }
+.rounded-xl    { border-radius: 0.75rem; }
+
+/* --- Button --- */
+button, input, textarea { font-family: inherit; }
+.cursor-pointer { cursor: pointer; }
+
+/* --- Responsive xl: (1280px) --- */
+@media (min-width: 1280px) {
+  .xl\:mt-12          { margin-top: 3rem; }
+  .xl\:flex-row        { flex-direction: row; }
+  .xl\:flex-1          { flex: 1 1 0%; }
+  .xl\:h-auto          { height: auto; }
+}
+
+/* --- Responsive md: (768px) --- */
+@media (min-width: 768px) {
+  .md\:h-\[550px\] { height: 550px; }
+  .md\:text-\[60px\] { font-size: 60px; }
+}
+
+/* --- Responsive sm: (640px) --- */
+@media (min-width: 640px) {
+  .sm\:px-16           { padding-left: 4rem;  padding-right: 4rem; }
+  .sm\:py-16           { padding-top: 4rem;   padding-bottom: 4rem; }
+  .sm\:text-\[18px\]   { font-size: 18px; }
+  .sm\:text-\[50px\]   { font-size: 50px; }
+}
+
+/* --- Responsive xs: (450px) --- */
+@media (min-width: 450px) {
+  .xs\:text-\[40px\] { font-size: 40px; }
+}
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+   ===================================================== */
+@media (max-width: 767px) {
+  /* Reduce form padding */
+  .p-8 { padding: 1.25rem; }
+  .gap-10 { gap: 1.5rem; }
+  .gap-8  { gap: 1.25rem; }
+
+  /* Earth canvas shorter on mobile */
+  .md\:h-\[550px\] { height: 260px !important; }
+
+  /* Stack contact form and globe vertically with less gap */
+  .flex-col-reverse { gap: 1rem; }
+
+  /* Input / textarea padding smaller */
+  .py-4 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  .px-6 { padding-left: 1rem; padding-right: 1rem; }
+
+  /* Submit button */
+  .py-3 { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+  .px-8 { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+@media (max-width: 460px) {
+  /* Tightest form on small phones */
+  .p-8 { padding: 1rem; }
+  .gap-8 { gap: 1rem; }
+  .mt-12 { margin-top: 1.5rem; }
+
+  /* Globe canvas even shorter */
+  .md\:h-\[550px\] { height: 220px !important; }
+}

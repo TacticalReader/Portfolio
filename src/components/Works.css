@@ -1,0 +1,322 @@
+/* =====================================================
+   Projects section
+   ===================================================== */
+
+.projects-heading {
+  position: relative;
+}
+
+.projects-heading::after {
+  content: "";
+  display: block;
+  width: 92px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #915eff 0%, #00cea8 100%);
+  box-shadow: 0 0 24px rgba(145, 94, 255, 0.45);
+}
+
+.projects-intro {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+}
+
+.projects-intro p {
+  max-width: 56rem;
+  color: #c9c5df;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 64px;
+}
+
+.project-card-shell {
+  min-width: 0;
+  height: 100%;
+}
+
+.project-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(21, 16, 48, 0.96) 0%, rgba(12, 9, 31, 0.98) 100%);
+  box-shadow: 0 24px 70px rgba(2, 4, 18, 0.45);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(145, 94, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 90% 12%, rgba(0, 206, 168, 0.12), transparent 30%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  border-color: rgba(145, 94, 255, 0.42);
+  box-shadow: 0 30px 90px rgba(2, 4, 18, 0.56), 0 0 0 1px rgba(145, 94, 255, 0.1);
+}
+
+.project-card:hover::before,
+.project-card:focus-within::before {
+  opacity: 1;
+}
+
+.project-image-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  overflow: hidden;
+  background: #090325;
+}
+
+.project-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5, 8, 22, 0) 42%, rgba(5, 8, 22, 0.84) 100%),
+    linear-gradient(90deg, rgba(145, 94, 255, 0.22), rgba(0, 206, 168, 0.08));
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 420ms ease, filter 420ms ease;
+}
+
+.project-card:hover .project-image,
+.project-card:focus-within .project-image {
+  filter: saturate(1.12) contrast(1.05);
+  transform: scale(1.06);
+}
+
+.project-action-row {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-link {
+  position: relative;
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(14, 12, 30, 0.92);
+  transform: translateY(-2px);
+}
+
+.project-link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(145, 94, 255, 0.32), 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.project-link-icon {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+
+.project-link-arrow {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  width: 9px;
+  height: 9px;
+  color: #00cea8;
+}
+
+.project-tooltip {
+  position: absolute;
+  right: 0;
+  bottom: -34px;
+  width: max-content;
+  max-width: 140px;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: #050816;
+  color: #ffffff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translateY(-4px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.project-link:hover .project-tooltip,
+.project-link:focus-visible .project-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 22px 0;
+}
+
+.project-title {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(21px, 2vw, 25px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.18;
+  text-transform: uppercase;
+}
+
+.project-title-icon {
+  flex: 0 0 auto;
+  color: #915eff;
+  filter: drop-shadow(0 0 10px rgba(145, 94, 255, 0.38));
+}
+
+.project-description {
+  color: #c9c5df;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 20px 22px 22px;
+}
+
+.project-tag {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 6px 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.project-tag.blue-text-gradient,
+.project-tag.green-text-gradient,
+.project-tag.pink-text-gradient,
+.project-tag.orange-text-gradient {
+  -webkit-text-fill-color: currentColor;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.project-tag.blue-text-gradient {
+  border-color: rgba(86, 204, 242, 0.24);
+  color: #79d8ff;
+}
+
+.project-tag.green-text-gradient {
+  border-color: rgba(56, 239, 125, 0.24);
+  color: #70f0aa;
+}
+
+.project-tag.pink-text-gradient {
+  border-color: rgba(252, 103, 103, 0.26);
+  color: #ff8fbd;
+}
+
+.project-tag.orange-text-gradient {
+  border-color: rgba(245, 175, 25, 0.28);
+  color: #ffc870;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    margin-top: 42px;
+    gap: 22px;
+  }
+
+  .projects-intro p {
+    font-size: 15px;
+    line-height: 27px;
+  }
+}
+
+@media (max-width: 420px) {
+  .project-content {
+    padding: 18px 18px 0;
+  }
+
+  .project-tags {
+    padding: 18px;
+  }
+
+  .project-title {
+    align-items: flex-start;
+    font-size: 20px;
+  }
+}

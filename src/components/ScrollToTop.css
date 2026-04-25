@@ -1,0 +1,86 @@
+/* =====================================================
+   ScrollToTop.css — All styles required by ScrollToTop.jsx
+   ===================================================== */
+
+.fixed          { position: fixed; }
+.relative       { position: relative; }
+.absolute       { position: absolute; }
+.bottom-10      { bottom: 2.5rem; }
+.right-10       { right: 2.5rem; }
+.z-50           { z-index: 50; }
+.z-10           { z-index: 10; }
+
+.flex           { display: flex; }
+.items-center   { align-items: center; }
+.justify-center { justify-content: center; }
+.cursor-pointer { cursor: pointer; }
+.pointer-events-none { pointer-events: none; }
+
+.w-14  { width: 3.5rem; }
+.h-14  { height: 3.5rem; }
+.w-\[80px\] { width: 80px; }
+.h-\[80px\] { height: 80px; }
+
+.rounded-full { border-radius: 9999px; }
+
+/* colors */
+.bg-primary   { background-color: #050816; }
+.bg-tertiary  { background-color: #151030; }
+.text-\[22px\] { font-size: 22px; }
+.text-\[\#915EFF\] { color: #915EFF; }
+
+/* shadow */
+.shadow-card  { box-shadow: 0px 35px 120px -15px #211e35; }
+
+/* border */
+.border        { border-width: 1px; border-style: solid; }
+.border-\[\#915EFF\]\/30 { border-color: rgba(145,94,255,0.3); }
+
+/* backdrop */
+.backdrop-blur-md { backdrop-filter: blur(12px); }
+
+/* SVG rotate */
+.-rotate-90 { transform: rotate(-90deg); }
+.opacity-50 { opacity: 0.5; }
+
+/* transitions */
+.transition-colors  { transition: background-color 150ms cubic-bezier(0.4,0,0.2,1),
+                                  border-color 150ms cubic-bezier(0.4,0,0.2,1),
+                                  color 150ms cubic-bezier(0.4,0,0.2,1); }
+.duration-300       { transition-duration: 300ms; }
+.hover\:bg-tertiary:hover    { background-color: #151030; }
+.hover\:text-white:hover     { color: #ffffff; }
+.group\:hover .group-hover\:bg-tertiary { background-color: #151030; }
+
+/* drop-shadow filter */
+.drop-shadow-\[0_0_10px_rgba\(145\,94\,255\,0\.5\)\] {
+  filter: drop-shadow(0 0 10px rgba(145,94,255,0.5));
+}
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+   ===================================================== */
+@media (max-width: 767px) {
+  /* Move button closer to corner */
+  .bottom-10 { bottom: 1.25rem; }
+  .right-10  { right: 1.25rem; }
+
+  /* Shrink button size */
+  .w-14 { width: 2.75rem; }
+  .h-14 { height: 2.75rem; }
+  .w-\[80px\] { width: 60px; }
+  .h-\[80px\] { height: 60px; }
+
+  /* Smaller icon */
+  .text-\[22px\] { font-size: 18px; }
+}
+
+@media (max-width: 460px) {
+  .bottom-10 { bottom: 1rem; }
+  .right-10  { right: 1rem; }
+  .w-14      { width: 2.5rem; }
+  .h-14      { height: 2.5rem; }
+  .w-\[80px\] { width: 52px; }
+  .h-\[80px\] { height: 52px; }
+  .text-\[22px\] { font-size: 16px; }
+}

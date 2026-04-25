@@ -1,0 +1,232 @@
+/* ============================================================
+   mobile.css — Global mobile responsiveness overrides
+   Covers cross-cutting concerns that span multiple components
+   ============================================================ */
+
+/* ── Prevent horizontal scroll on any device ── */
+html, body, #root {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ── Smooth scrolling on iOS ── */
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Touch targets: every interactive element ≥ 44px ── */
+a, button, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Except small icon-only badge links — they should be flex-centered */
+.hero-social-link,
+.project-link,
+.mobile-menu-button {
+  /* already handle their own sizing */
+  min-height: unset;
+  min-width: unset;
+}
+
+/* ============================================================
+   TABLET  (max-width: 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  /* Section padding slightly tighter on tablets */
+  .sm\:px-16 { padding-left: 3rem; padding-right: 3rem; }
+
+  /* On tablets, the library still uses two-column layout.
+     Ensure icons are properly sized but don't override their positioning. */
+  .vertical-timeline-element-icon {
+    box-shadow: 0 0 0 3px rgba(145, 94, 255, 0.3) !important;
+  }
+}
+
+/* ============================================================
+   MOBILE  (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* ── Section wrapper padding ── */
+  section.max-w-7xl {
+    padding-left: 1.25rem  !important;
+    padding-right: 1.25rem !important;
+    padding-top: 2.5rem    !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* ── Section headings ── */
+  .md\:text-\[60px\] { font-size: 36px !important; }
+
+  /* ── Hero section ── */
+  .hero-section {
+    min-height: 100svh; /* use svh so browser chrome is not counted */
+  }
+
+  /* ── Vertical Timeline (react-vertical-timeline-component) ── */
+  /*
+   * The library switches to single-column mode below 1170px automatically.
+   * We only need to:
+   *  1. Keep the vertical line on the left
+   *  2. Keep icons properly sized + visible
+   *  3. Push content to the right of the icon
+   */
+
+  /* Vertical connecting line */
+  .vertical-timeline::before {
+    left: 27px !important;   /* centre of a 56 px icon */
+    width: 3px !important;
+  }
+
+  /* Spacing between timeline elements */
+  .vertical-timeline-element {
+    margin: 1.5rem 0 !important;
+  }
+
+  /* Icon circle — MUST stay 56 × 56 so the image inside is visible */
+  .vertical-timeline-element-icon {
+    width: 56px  !important;
+    height: 56px !important;
+    left: 0      !important;
+    margin-left: 0 !important;
+    top: 0 !important;
+    box-shadow: 0 0 0 3px rgba(145,94,255,0.35) !important;
+  }
+
+  /* Icon image inside the circle */
+  .vertical-timeline-element-icon img {
+    width: 65%  !important;
+    height: 65% !important;
+    object-fit: contain !important;
+  }
+
+  /* Card content: pushed right so it clears the icon */
+  .vertical-timeline-element-content {
+    margin-left: 72px   !important;
+    padding: 1rem 1.25rem !important;
+    border-radius: 12px !important;
+  }
+
+  /* Arrow pointing from card towards the icon */
+  .vertical-timeline-element-content-arrow {
+    top: 18px  !important;
+    left: -7px !important;
+    right: auto !important;
+    border-left-width: 0   !important;
+    border-right: 7px solid rgba(29, 24, 54, 0.9) !important;
+  }
+
+  /* Date appears below the card on mobile */
+  .vertical-timeline-element-date {
+    padding: 0.375rem 0 0 !important;
+    text-align: left !important;
+    font-size: 12px  !important;
+    opacity: 0.75    !important;
+    margin-left: 72px !important;
+  }
+
+  /* ── Projects grid: single column on mobile ── */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    margin-top: 32px !important;
+  }
+
+  /* ── About portrait image ── */
+  .md\:w-\[250px\] { width: 150px !important; }
+  .md\:h-\[250px\] { height: 150px !important; }
+
+  /* ── Testimonial cards ── */
+  .rounded-3xl { border-radius: 1rem; }
+
+  /* ── Fixed CTA buttons: all responsive rules live in CTAButtons.css ── */
+
+  /* ── Scroll to top button ── */
+  .fixed.bottom-10.right-10 {
+    bottom: 1.25rem !important;
+    right: 1.25rem  !important;
+  }
+
+  /* ── Hero canvas height (ComputersCanvas) ── */
+  /* The 3D scene is absolute-filled — ensure section doesn't overflow */
+  canvas {
+    max-height: 100vh;
+  }
+
+  /* ── Hash spans: reduce jump offset on mobile ── */
+  .hash-span {
+    margin-top: -70px;
+    padding-bottom: 70px;
+  }
+
+  /* ── Feedback section: -mt-20 reduced for mobile ── */
+  .-mt-20 { margin-top: -3rem !important; }
+
+  /* ── Contact section ── */
+  /* flex-[0.75] becomes full width on mobile */
+  .flex-\[0\.75\] { flex: 1 1 100% !important; }
+}
+
+/* ============================================================
+   SMALL PHONE  (max-width: 460px)
+   ============================================================ */
+@media (max-width: 460px) {
+
+  /* ── Section wrapper: minimal padding ── */
+  section.max-w-7xl {
+    padding-left: 1rem  !important;
+    padding-right: 1rem !important;
+  }
+
+  /* ── Section headings ── */
+  .md\:text-\[60px\] { font-size: 28px !important; }
+
+  /* ── Project description text ── */
+  .project-description { font-size: 13px; line-height: 1.6; }
+
+  /* ── CTA buttons: all responsive rules live in CTAButtons.css ── */
+
+  /* ── Vertical Timeline: keep same icon size, just tighten card padding ── */
+  .vertical-timeline-element-content {
+    margin-left: 68px !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .vertical-timeline-element-date {
+    margin-left: 68px !important;
+  }
+
+  /* ── Feedback cards ── */
+  .rounded-3xl { border-radius: 0.75rem; }
+
+  /* ── Testimonial: text sizes ── */
+  .p-10 { padding: 1rem !important; }
+
+  /* ── Reduce hash span jump ── */
+  .hash-span {
+    margin-top: -60px;
+    padding-bottom: 60px;
+  }
+}
+
+/* ============================================================
+   LANDSCAPE PHONES  (max-height: 500px, orientation: landscape)
+   ============================================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vw; /* Use viewport width as height fallback */
+  }
+
+  .hero-copy-wrap {
+    top: 72px !important;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 12px !important;
+  }
+
+  .hero-accent-line {
+    height: 80px !important;
+  }
+}

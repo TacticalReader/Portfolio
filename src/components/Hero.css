@@ -1,0 +1,229 @@
+/* =====================================================
+   Hero section
+   ===================================================== */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero-copy-wrap {
+  position: absolute;
+  top: clamp(96px, 15vh, 150px);
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  max-width: 80rem;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0 24px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.hero-accent {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.hero-accent-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #915eff;
+  box-shadow: 0 0 26px rgba(145, 94, 255, 0.7);
+}
+
+.hero-accent-line {
+  width: 4px;
+  height: clamp(150px, 30vh, 320px);
+  background: linear-gradient(180deg, #915eff 0%, rgba(128, 77, 238, 0.18) 82%, rgba(128, 77, 238, 0) 100%);
+}
+
+.hero-copy {
+  max-width: min(680px, calc(100vw - 84px));
+  padding-top: 2px;
+  pointer-events: auto;
+}
+
+.hero-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.hero-name {
+  color: #915eff;
+  white-space: nowrap;
+  text-shadow: 0 0 30px rgba(145, 94, 255, 0.36);
+}
+
+.hero-subtitle {
+  max-width: 580px;
+  margin-top: 12px;
+  color: #f3f3f3;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(17px, 2.7vw, 30px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.hero-line-break {
+  display: block;
+}
+
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.hero-social-link {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(9, 3, 37, 0.46);
+  color: #ffffff;
+  font-size: 22px;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-social-link:hover,
+.hero-social-link:focus-visible {
+  border-color: rgba(145, 94, 255, 0.58);
+  background: rgba(21, 16, 48, 0.78);
+  color: #915eff;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-scroll-shell {
+  display: flex;
+  width: 35px;
+  height: 64px;
+  align-items: flex-start;
+  justify-content: center;
+  border: 4px solid #aaa6c3;
+  border-radius: 24px;
+  padding: 8px;
+}
+
+.hero-scroll-dot {
+  width: 12px;
+  height: 12px;
+  margin-bottom: 4px;
+  border-radius: 999px;
+  background: #aaa6c3;
+}
+
+@media (min-width: 640px) {
+  .hero-copy-wrap {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-copy-wrap {
+    top: clamp(118px, 18vh, 170px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-copy-wrap {
+    top: 98px;
+    gap: 14px;
+  }
+
+  .hero-accent {
+    padding-top: 8px;
+  }
+
+  .hero-accent-dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-accent-line {
+    width: 3px;
+    height: 145px;
+  }
+
+  .hero-copy {
+    max-width: calc(100vw - 78px);
+  }
+
+  .hero-social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 86px;
+  }
+}
+
+@media (max-width: 460px) {
+  .hero-copy-wrap {
+    top: 92px;
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .hero-title {
+    max-width: 310px;
+    font-size: 42px;
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    max-width: 280px;
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  .hero-line-break {
+    display: none;
+  }
+
+  .hero-socials {
+    margin-top: 18px;
+  }
+}
